@@ -1,27 +1,16 @@
 import React, {Component} from 'react';
+import {CandleData} from './statelessComponents';
 
-class TradingData extends Component {
-    constructor(props) {
-        super(props);
-    }
-
+export default class TradingData extends Component {
 
     render() {
 
-        let data = 'no data';
-
-        if (this.props.tradingData[0]) {
-            data = this.props.tradingData[0].volumePriceCorrelation;
-        }
-
         return (
             <div>
-                {data}
+                {this.props.tradingData.map((candleData, index) => {
+                    return <CandleData key={index} candleData={candleData}/>;
+                })}
             </div>
         )
     }
-
-
 }
-
-export default TradingData

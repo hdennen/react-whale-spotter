@@ -44,11 +44,26 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <button onClick={() => this.fetchData()}>
-            {this.state.fetchButtonText}
-          </button>
-          <TradingData tradingData={this.state.tradingData}/>
-          <AggregateData aggregateData={this.state.aggregateData}/>
+          <div className="container">
+              <div className="row">
+                  <div className="twelve columns flex-center">
+                      <div>
+                          <button onClick={() => this.fetchData()}>
+                              {this.state.fetchButtonText}
+                          </button>
+                      </div>
+                  </div>
+              </div>
+
+              <div className="row">
+                  <div className="six columns">
+                      <TradingData tradingData={this.state.tradingData}/>
+                  </div>
+                  <div className="six columns">
+                      <AggregateData aggregateData={this.state.aggregateData}/>
+                  </div>
+              </div>
+          </div>
       </div>
     );
   }

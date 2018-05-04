@@ -1,10 +1,7 @@
 export class VolumeDeviance {
-    constructor() {
-    }
 
     augmentTradingData(candles) {
-        const len = candles.length;
-        let deltaPrice, deltaRange;
+        let deltaPrice;
 
         return candles.map((candle, index, arr) => {
             deltaPrice = candle.open - candle.close;
@@ -61,6 +58,7 @@ export class VolumeDeviance {
 
             if (finalIndex === index) {
                 const amount = index + 1;
+
                 acc.deltaPriceMean = this.calcMean(amount, sumDeltaPrice);
                 acc.deltaPriceMedian = this.calcMedian(acc.deltaPriceLowerBound, acc.deltaPriceUpperBound);
                 acc.deltaRangeMean = this.calcMean(amount, sumDeltaRange);

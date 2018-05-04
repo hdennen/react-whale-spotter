@@ -496,7 +496,7 @@ This project setup uses [Webpack](https://webpack.js.org/) for handling all asse
 
 ```js
 import React, { Component } from 'react';
-import './Button.css'; // Tell Webpack that Button.js uses these styles
+import skeleton; // Tell Webpack that Button.js uses these styles
 
 class Button extends Component {
   render() {

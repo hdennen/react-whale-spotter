@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './skeleton/normalize.css';
+import './skeleton/skeleton.css';
+
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
