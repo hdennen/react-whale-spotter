@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import TradingData from "./tradingData";
+import TradingData from './tradingData.component';
 
+import AggregateData from './aggregateData.component';
 import VolumeDeviance from './volumeDeviance';
 
 class App extends Component {
@@ -9,9 +10,21 @@ class App extends Component {
     super(props);
     this.state = {
         tradingData: [],
+        aggregateData: {},
         fetchButtonText: 'Fetch Data'
-    }
+    };
     this.volumeDeviance = new VolumeDeviance();
+  }
+
+  crunchData(jsonData) {
+      const tradingData = this.volumeDeviance.augmentTradingData(jsonData);
+      const aggregateData = this.volumeDeviance.calcPeriodData(tradingData.slice());
+
+      this.setState({
+          tradingData,
+          aggregateData,
+          fetchButtonText: 'Fetch Data'
+      });
   }
 
   fetchData() {
@@ -24,25 +37,18 @@ class App extends Component {
               return response.json();
           })
           .then((myJson) => {
-          console.log(myJson.Data);
-            return this.volumeDeviance.augmentTradingData(myJson.Data);
-            })
-          .then((augmentedArray) => {
-          console.log(augmentedArray);
-            this.setState({
-                tradingData: augmentedArray,
-                fetchButtonText: 'Fetch Data'
-            });
+            this.crunchData(myJson.Data);
           });
   }
 
   render() {
     return (
       <div className="App">
-        <button onClick={() => this.fetchData()}>
+          <button onClick={() => this.fetchData()}>
             {this.state.fetchButtonText}
-        </button>
+          </button>
           <TradingData tradingData={this.state.tradingData}/>
+          <AggregateData aggregateData={this.state.aggregateData}/>
       </div>
     );
   }

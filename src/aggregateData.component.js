@@ -14,8 +14,8 @@ export default class AggregateData extends Component {
 
         return (
             <div>
-                {Object.keys(this.props.aggregateData).map((key) => {
-                    return <AggregateDataProperty property={key} value={this.props.aggregateData[key]}/>;
+                {Object.keys(this.props.aggregateData).map((key, index) => {
+                    return <AggregateDataProperty key={index} property={key} value={this.props.aggregateData[key]}/>;
                 })}
             </div>
 
