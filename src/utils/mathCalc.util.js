@@ -1,9 +1,13 @@
 function calcMedian(lo, hi) {
-    return (hi - ((hi - lo) / 2)).toFixed(2);
+    return round((hi - ((hi - lo) / 2)), 5);
 }
 
 function calcMean(amount, sum) {
-    return (sum / amount).toFixed(2);
+    return round((sum / amount), 5);
 }
 
-export {calcMedian, calcMean};
+function round(value, decimals) {
+    return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+}
+
+export {calcMedian, calcMean, round};
