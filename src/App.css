@@ -5,3 +5,17 @@
     display: flex;
     justify-content: center;
 }
+
+.candle-data {
+    margin: 0 0 10px 0;
+    padding: 10px;
+
+}
+
+.up-candle {
+    background-color: #c4eac4;
+}
+
+.down-candle {
+    background-color: #e6a3a3;
+}
