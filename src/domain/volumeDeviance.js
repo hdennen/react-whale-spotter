@@ -6,13 +6,26 @@ export class VolumeDeviance {
         let deltaPrice;
 
         return candles.map((candle, index, arr) => {
-            deltaPrice = +(candle.open - candle.close).toFixed(2);
+            deltaPrice = +(candle.close - candle.open).toFixed(2);
 
             candle.deltaPrice = deltaPrice;
             candle.deltaPriceAbs = Math.abs(deltaPrice);
             candle.deltaRange = +(candle.high - candle.low).toFixed(2);
 
             return candle;
+        });
+    }
+
+    measureAgainstAggregates(tradingData, aggregateData) {
+        return tradingData.map(candle => {
+           candle.deltaAggregatePriceMean = (candle.deltaPriceAbs - aggregateData.deltaPriceMean).toFixed(2);
+           candle.deltaAggregatePriceMedian = (candle.deltaPriceAbs - aggregateData.deltaPriceMedian).toFixed(2);
+           candle.deltaAggregateRangeMean = (candle.deltaRange - aggregateData.deltaRangeMean).toFixed(2);
+           candle.deltaAggregateRangeMedian = (candle.deltaRange - aggregateData.deltaRangeMedian).toFixed(2);
+           candle.deltaAggregateVolumeMean = (candle.volumefrom - aggregateData.volumeMean).toFixed(2);
+           candle.deltaAggregateVolumeMedian = (candle.volumefrom - aggregateData.volumeMedian).toFixed(2);
+
+           return candle;
         });
     }
 
@@ -59,6 +72,8 @@ export class VolumeDeviance {
                 acc.deltaRangeMedian = calcMedian(acc.deltaRangeLowerBound, acc.deltaRangeUpperBound);
                 acc.volumeMean = calcMean(amount, sumVolume);
                 acc.volumeMedian = calcMedian(acc.volumeLowerBound, acc.volumeUpperBound);
+                acc.deltaVolume = (acc.volumeUpperBound - acc.volumeLowerBound).toFixed(2);
+                acc.deltaVolumeMedianMean = (acc.volumeMedian - acc.volumeMean).toFixed(2);
             }
 
             return acc;

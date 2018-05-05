@@ -10,18 +10,22 @@ class App extends Component {
     super(props);
     this.state = {
         tradingData: [],
+        fullCandlesData: [],
         aggregateData: {},
         fetchButtonText: 'Fetch Data'
     };
+
     this.volumeDeviance = new VolumeDeviance();
   }
 
   crunchData(jsonData) {
       const tradingData = this.volumeDeviance.augmentTradingData(jsonData);
       const aggregateData = this.volumeDeviance.calcPeriodData(tradingData.slice());
+      const fullCandlesData = this.volumeDeviance.measureAgainstAggregates(tradingData.slice(), aggregateData);
 
       this.setState({
           tradingData,
+          fullCandlesData,
           aggregateData,
           fetchButtonText: 'Fetch Data'
       });
@@ -57,7 +61,7 @@ class App extends Component {
 
               <div className="row">
                   <div className="six columns">
-                      <TradingData tradingData={this.state.tradingData}/>
+                      <TradingData tradingData={this.state.fullCandlesData}/>
                   </div>
                   <div className="six columns">
                       <AggregateData aggregateData={this.state.aggregateData}/>

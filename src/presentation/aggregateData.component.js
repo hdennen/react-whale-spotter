@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import {PropertyValueDisplay} from './statelessComponents';
+import { PropertyValueDisplay } from './statelessComponents';
 
 export default class AggregateData extends Component {
 
