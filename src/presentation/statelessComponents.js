@@ -18,5 +18,4 @@ function CandleData(props) {
     )
 }
 
-export {PropertyValueDisplay};
-export {CandleData};
+export { PropertyValueDisplay, CandleData };

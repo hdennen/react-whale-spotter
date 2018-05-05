@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import TradingData from './tradingData.component';
+import TradingData from './presentation/tradingData.component';
 
-import AggregateData from './aggregateData.component';
-import VolumeDeviance from './volumeDeviance';
+import AggregateData from './presentation/aggregateData.component';
+import VolumeDeviance from './domain/volumeDeviance';
 
 class App extends Component {
   constructor(props) {

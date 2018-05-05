@@ -1,25 +1,19 @@
+import { calcMedian, calcMean } from '../utils/mathCalc.util';
+
 export class VolumeDeviance {
 
     augmentTradingData(candles) {
         let deltaPrice;
 
         return candles.map((candle, index, arr) => {
-            deltaPrice = candle.open - candle.close;
+            deltaPrice = (candle.open - candle.close).toFixed(2);
 
             candle.deltaPrice = deltaPrice;
             candle.deltaPriceAbs = Math.abs(deltaPrice);
-            candle.deltaRange = candle.high - candle.low;
+            candle.deltaRange = (candle.high - candle.low).toFixed(2);
 
             return candle;
         });
-    }
-
-    calcMedian(lo, hi) {
-        return hi - ((hi - lo) / 2);
-    }
-
-    calcMean(amount, sum) {
-        return sum / amount;
     }
 
     calcPeriodData(candles) {
@@ -59,12 +53,12 @@ export class VolumeDeviance {
             if (finalIndex === index) {
                 const amount = index + 1;
 
-                acc.deltaPriceMean = this.calcMean(amount, sumDeltaPrice);
-                acc.deltaPriceMedian = this.calcMedian(acc.deltaPriceLowerBound, acc.deltaPriceUpperBound);
-                acc.deltaRangeMean = this.calcMean(amount, sumDeltaRange);
-                acc.deltaRangeMedian = this.calcMedian(acc.deltaRangeLowerBound, acc.deltaRangeUpperBound);
-                acc.volumeMean = this.calcMean(amount, sumVolume);
-                acc.volumeMedian = this.calcMedian(acc.volumeLowerBound, acc.volumeUpperBound);
+                acc.deltaPriceMean = calcMean(amount, sumDeltaPrice);
+                acc.deltaPriceMedian = calcMedian(acc.deltaPriceLowerBound, acc.deltaPriceUpperBound);
+                acc.deltaRangeMean = calcMean(amount, sumDeltaRange);
+                acc.deltaRangeMedian = calcMedian(acc.deltaRangeLowerBound, acc.deltaRangeUpperBound);
+                acc.volumeMean = calcMean(amount, sumVolume);
+                acc.volumeMedian = calcMedian(acc.volumeLowerBound, acc.volumeUpperBound);
             }
 
             return acc;
