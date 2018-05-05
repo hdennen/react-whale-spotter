@@ -6,11 +6,11 @@ export class VolumeDeviance {
         let deltaPrice;
 
         return candles.map((candle, index, arr) => {
-            deltaPrice = (candle.open - candle.close).toFixed(2);
+            deltaPrice = +(candle.open - candle.close).toFixed(2);
 
             candle.deltaPrice = deltaPrice;
             candle.deltaPriceAbs = Math.abs(deltaPrice);
-            candle.deltaRange = (candle.high - candle.low).toFixed(2);
+            candle.deltaRange = +(candle.high - candle.low).toFixed(2);
 
             return candle;
         });
