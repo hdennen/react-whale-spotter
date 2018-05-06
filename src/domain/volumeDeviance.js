@@ -30,17 +30,18 @@ export class VolumeDeviance {
     }
 
     calcPeriodData(candles) {
+        const absurdlyLargeNumber = 9999999999;
         const accumulator = {
             deltaPriceUpperBound: 0,
-            deltaPriceLowerBound: 99999,
+            deltaPriceLowerBound: absurdlyLargeNumber,
             deltaPriceMedian: 0,
             deltaPriceMean: 0,
             deltaRangeUpperBound: 0,
-            deltaRangeLowerBound: 99999,
+            deltaRangeLowerBound: absurdlyLargeNumber,
             deltaRangeMedian: 0,
             deltaRangeMean: 0,
             volumeUpperBound: 0,
-            volumeLowerBound: 99999,
+            volumeLowerBound: absurdlyLargeNumber,
             volumeMedian: 0,
             volumeMean: 0
         };
