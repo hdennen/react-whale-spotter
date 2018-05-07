@@ -36,7 +36,7 @@ class App extends Component {
           fetchButtonText: 'Fetching'
       });
 
-      fetch('https://min-api.cryptocompare.com/data/histohour?fsym=TRX&tsym=USD&limit=10')
+      fetch('https://min-api.cryptocompare.com/data/histohour?fsym=BTC&tsym=USD&limit=10')
           .then((response) => {
               return response.json();
           })
@@ -64,7 +64,9 @@ class App extends Component {
                       <TradingData tradingData={this.state.fullCandlesData}/>
                   </div>
                   <div className="six columns">
-                      <AggregateData aggregateData={this.state.aggregateData}/>
+                      <div className="side-bar">
+                          <AggregateData aggregateData={this.state.aggregateData}/>
+                      </div>
                   </div>
               </div>
           </div>

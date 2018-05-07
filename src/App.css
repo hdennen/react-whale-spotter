@@ -19,3 +19,7 @@
 .down-candle {
     background-color: #e6a3a3;
 }
+
+.side-bar {
+    position: fixed;
+}
