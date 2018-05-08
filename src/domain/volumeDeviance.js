@@ -27,6 +27,9 @@ export class VolumeDeviance {
            candle.deltaAggregateVolumeMedian = round((candle.volumefrom - aggregateData.volumeMedian), 5);
 
            candle.percentageVolumeDeviationFromMedian = calcPercentage(candle.deltaAggregateVolumeMedian, aggregateData.deltaVolumeMedianToBounds);
+           candle.percentageVolumeDeviationFromMean = candle.volumefrom > aggregateData.volumeMean ?
+               calcPercentage(candle.deltaAggregateVolumeMean, aggregateData.deltaVolumeMeanToUpperBound) :
+               calcPercentage(candle.deltaAggregateVolumeMean, aggregateData.deltaVolumeLowerBoundToMean);
 
            return candle;
         });
@@ -79,10 +82,10 @@ export class VolumeDeviance {
                 acc.deltaVolume = round((acc.volumeUpperBound - acc.volumeLowerBound), 5);
                 acc.deltaVolumeMedianMean = round((acc.volumeMedian - acc.volumeMean), 5);
 
-                acc.deltaVolumeMeanToUpperBound = acc.volumeUpperBound - acc.volumeMean;
-                acc.deltaVolumeLowerBoundToMean = acc.volumeMean - acc.volumeLowerBound;
+                acc.deltaVolumeMeanToUpperBound = round(acc.volumeUpperBound - acc.volumeMean, 5);
+                acc.deltaVolumeLowerBoundToMean = round(acc.volumeMean - acc.volumeLowerBound, 5);
 
-                acc.deltaVolumeMedianToBounds = acc.volumeUpperBound - acc.volumeMedian;
+                acc.deltaVolumeMedianToBounds = round(acc.volumeUpperBound - acc.volumeMedian, 5);
             }
 
             return acc;
