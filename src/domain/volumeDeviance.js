@@ -1,4 +1,4 @@
-import { calcMedian, calcMean, round } from '../utils/mathCalc.util';
+import { calcMedian, calcMean, round, calcPercentage} from '../utils/mathCalc.util';
 
 export class VolumeDeviance {
 
@@ -17,6 +17,7 @@ export class VolumeDeviance {
     }
 
     measureAgainstAggregates(tradingData, aggregateData) {
+
         return tradingData.map(candle => {
            candle.deltaAggregatePriceMean = round((candle.deltaPriceAbs - aggregateData.deltaPriceMean), 5);
            candle.deltaAggregatePriceMedian = round((candle.deltaPriceAbs - aggregateData.deltaPriceMedian), 5);
@@ -24,6 +25,8 @@ export class VolumeDeviance {
            candle.deltaAggregateRangeMedian = round((candle.deltaRange - aggregateData.deltaRangeMedian), 5);
            candle.deltaAggregateVolumeMean = round((candle.volumefrom - aggregateData.volumeMean), 5);
            candle.deltaAggregateVolumeMedian = round((candle.volumefrom - aggregateData.volumeMedian), 5);
+
+           candle.percentageVolumeDeviationFromMedian = calcPercentage(candle.deltaAggregateVolumeMedian, aggregateData.deltaVolumeMedianToBounds);
 
            return candle;
         });
@@ -75,6 +78,11 @@ export class VolumeDeviance {
                 acc.volumeMedian = calcMedian(acc.volumeLowerBound, acc.volumeUpperBound);
                 acc.deltaVolume = round((acc.volumeUpperBound - acc.volumeLowerBound), 5);
                 acc.deltaVolumeMedianMean = round((acc.volumeMedian - acc.volumeMean), 5);
+
+                acc.deltaVolumeMeanToUpperBound = acc.volumeUpperBound - acc.volumeMean;
+                acc.deltaVolumeLowerBoundToMean = acc.volumeMean - acc.volumeLowerBound;
+
+                acc.deltaVolumeMedianToBounds = acc.volumeUpperBound - acc.volumeMedian;
             }
 
             return acc;

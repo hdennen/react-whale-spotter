@@ -10,4 +10,13 @@ function round(value, decimals) {
     return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 }
 
-export {calcMedian, calcMean, round};
+function calcPercentage(ratioAntecedent, ratioConsequent) {
+    return round(ratioAntecedent / ratioConsequent, 2) * 100;
+}
+
+export {
+    calcMedian,
+    calcMean,
+    round,
+    calcPercentage
+};

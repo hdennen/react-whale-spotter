@@ -36,7 +36,7 @@ class App extends Component {
           fetchButtonText: 'Fetching'
       });
 
-      fetch('https://min-api.cryptocompare.com/data/histohour?fsym=BTC&tsym=USD&limit=10')
+      fetch('https://min-api.cryptocompare.com/data/histohour?fsym=BTC&tsym=USD&limit=24')
           .then((response) => {
               return response.json();
           })
