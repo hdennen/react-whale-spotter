@@ -1,9 +1,12 @@
 import React from 'react';
 
 function PropertyValueDisplay(props) {
+    let value = props.value;
+    if (props.property === 'time') value = new Date(props.value * 1000).toUTCString();
+
     return (
         <div className="key-value-element">
-            {props.property}: {props.value}
+            {props.property}: {value}
         </div>
     )
 }

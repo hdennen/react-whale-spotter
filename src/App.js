@@ -4,18 +4,19 @@ import TradingData from './presentation/tradingData.component';
 
 import AggregateData from './presentation/aggregateData.component';
 import VolumeDeviance from './domain/volumeDeviance';
+import ApiAdapter from './communication/api.adapter';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        tradingData: [],
-        fullCandlesData: [],
-        aggregateData: {},
-        fetchButtonText: 'Fetch Data'
+        fullCandlesData: [{data: 'No data'}],
+        aggregateData: {data: 'No data'},
+        fetchButtonText: 'Update Data'
     };
 
     this.volumeDeviance = new VolumeDeviance();
+    this.api = new ApiAdapter();
   }
 
   crunchData(jsonData) {
@@ -23,25 +24,22 @@ class App extends Component {
       const aggregateData = this.volumeDeviance.calcPeriodData(tradingData.slice());
       const fullCandlesData = this.volumeDeviance.measureAgainstAggregates(tradingData.slice(), aggregateData);
 
-      this.setState({
-          tradingData,
-          fullCandlesData,
-          aggregateData,
-          fetchButtonText: 'Fetch Data'
-      });
+      return { aggregateData, fullCandlesData };
   }
 
-  fetchData() {
+    updateData() {
       this.setState({
-          fetchButtonText: 'Fetching'
+          fetchButtonText: 'Updating'
       });
 
-      fetch('https://min-api.cryptocompare.com/data/histohour?fsym=BTC&tsym=USD&limit=24')
-          .then((response) => {
-              return response.json();
-          })
+      this.api.fetchData()
           .then((myJson) => {
-            this.crunchData(myJson.Data);
+              const { fullCandlesData, aggregateData } = this.crunchData(myJson.Data);
+              this.setState({
+                  fullCandlesData,
+                  aggregateData,
+                  fetchButtonText: 'Update Data'
+              });
           });
   }
 
@@ -51,11 +49,6 @@ class App extends Component {
           <div className="container">
               <div className="row">
                   <div className="twelve columns flex-center">
-                      <div>
-                          <button onClick={() => this.fetchData()}>
-                              {this.state.fetchButtonText}
-                          </button>
-                      </div>
                   </div>
               </div>
 
@@ -65,6 +58,11 @@ class App extends Component {
                   </div>
                   <div className="six columns">
                       <div className="side-bar">
+                          <div>
+                              <button onClick={() => this.updateData()}>
+                                  {this.state.fetchButtonText}
+                              </button>
+                          </div>
                           <AggregateData aggregateData={this.state.aggregateData}/>
                       </div>
                   </div>
