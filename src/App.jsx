@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import TradingData from './presentation/tradingData.component';
+import TradingData from './presentation/tradingData.component.jsx';
 
-import AggregateData from './presentation/aggregateData.component';
+import AggregateData from './presentation/aggregateData.component.jsx';
 import VolumeDeviance from './domain/volumeDeviance';
 import ApiAdapter from './communication/api.adapter';
+import SymbolSelection from "./presentation/symbolSelection.component.jsx";
 
 class App extends Component {
   constructor(props) {
@@ -12,11 +13,18 @@ class App extends Component {
     this.state = {
         fullCandlesData: [{data: 'No data'}],
         aggregateData: {data: 'No data'},
-        fetchButtonText: 'Update Data'
+        fetchButtonText: 'Update Data',
+        includeCurrentCandle: false,
+        symbolPair: {
+            fromSymbol: 'BTC',
+            toSymbol: 'USD'
+        }
     };
 
     this.volumeDeviance = new VolumeDeviance();
     this.api = new ApiAdapter();
+
+    this.symbolInputHandler = this.symbolInputHandler.bind(this);
   }
 
   crunchData(jsonData) {
@@ -43,6 +51,12 @@ class App extends Component {
           });
   }
 
+    symbolInputHandler(symbolPair) {
+
+        this.setState({symbolPair});
+
+    }
+
   render() {
     return (
       <div className="App">
@@ -59,6 +73,7 @@ class App extends Component {
                   <div className="six columns">
                       <div className="side-bar">
                           <div>
+                              <SymbolSelection symbolPair={this.state.symbolPair} inputHandler={this.symbolInputHandler} />
                               <button onClick={() => this.updateData()}>
                                   {this.state.fetchButtonText}
                               </button>

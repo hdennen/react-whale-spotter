@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {CandleData} from './statelessComponents';
+import {CandleData} from './statelessComponents.jsx';
 
 export default class TradingData extends Component {
 
