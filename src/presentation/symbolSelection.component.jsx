@@ -4,8 +4,9 @@ export default class SymbolSelection extends Component {
     constructor(props) {
         super(props);
         this.localState = {
-            fromSymbol: this.props.symbolPair.fromSymbol,
-            toSymbol: this.props.symbolPair.toSymbol
+            fromSymbol: this.props.queryOptions.fromSymbol,
+            toSymbol: this.props.queryOptions.toSymbol,
+            queryLimit: this.props.queryOptions.queryLimit
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -23,11 +24,15 @@ export default class SymbolSelection extends Component {
             <form>
                 <label>
                     from symbol:
-                    <input type="text" id="fromSymbol" value={this.props.symbolPair.fromSymbol} onChange={this.handleChange} />
+                    <input type="text" id="fromSymbol" value={this.props.queryOptions.fromSymbol} onChange={this.handleChange} />
                 </label>
                 <label>
                     to symbol:
-                    <input type="text" id="toSymbol" value={this.props.symbolPair.toSymbol} onChange={this.handleChange} />
+                    <input type="text" id="toSymbol" value={this.props.queryOptions.toSymbol} onChange={this.handleChange} />
+                </label>
+                <label>
+                    limit:
+                    <input type="text" id="queryLimit" value={this.props.queryOptions.queryLimit} onChange={this.handleChange} />
                 </label>
             </form>
         )

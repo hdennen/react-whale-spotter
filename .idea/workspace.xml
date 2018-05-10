@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b85926d2-9760-4d7b-a974-818abe948a08" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/presentation/symbolSelection.component.jsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.jsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/presentation/aggregateData.component.js" afterPath="$PROJECT_DIR$/src/presentation/aggregateData.component.jsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/presentation/statelessComponents.js" afterPath="$PROJECT_DIR$/src/presentation/statelessComponents.jsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/presentation/tradingData.component.js" afterPath="$PROJECT_DIR$/src/presentation/tradingData.component.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.jsx" afterPath="$PROJECT_DIR$/src/App.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/communication/api.adapter.js" afterPath="$PROJECT_DIR$/src/communication/api.adapter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/presentation/symbolSelection.component.jsx" afterPath="$PROJECT_DIR$/src/presentation/symbolSelection.component.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,8 +25,8 @@
       <file leaf-file-name="api.adapter.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/communication/api.adapter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+            <state relative-caret-position="225">
+              <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -335,12 +330,12 @@
       <updated>1525028739668</updated>
       <workItem from="1525028741081" duration="19287000" />
       <workItem from="1525291975266" duration="19168000" />
-      <workItem from="1525870975869" duration="4421000" />
+      <workItem from="1525870975869" duration="6041000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54671000" />
+    <option name="totallyTimeSpent" value="56291000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -407,28 +402,29 @@
         <state relative-caret-position="345">
           <caret line="23" column="61" lean-forward="true" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
           <folding>
-            <marker date="1525951683506" expanded="true" signature="7:386" ph="..." />
-            <marker date="1525951683506" expanded="true" signature="416:2837" ph="{...}" />
-            <marker date="1525951683506" expanded="true" signature="439:893" ph="{...}" />
-            <marker date="1525951683506" expanded="true" signature="476:739" ph="{&quot;fetchButtonText&quot;: 'Update Data'...}" />
-            <marker date="1525951683506" expanded="true" signature="663:733" ph="{&quot;fromSymbol&quot;: 'BTC'...}" />
-            <marker date="1525951683506" expanded="true" signature="918:1246" ph="{...}" />
-            <marker date="1525951683506" expanded="true" signature="1265:1664" ph="{...}" />
-            <marker date="1525951683506" expanded="true" signature="1287:1334" ph="{&quot;fetchButtonText&quot;: 'Updating'...}" />
-            <marker date="1525951683506" expanded="true" signature="1393:1658" ph="{...}" />
-            <marker date="1525951683506" expanded="true" signature="1510:1644" ph="{&quot;fullCandlesData&quot;: fullCandlesData...}" />
-            <marker date="1525951683506" expanded="true" signature="1701:1747" ph="{...}" />
-            <marker date="1525951683506" expanded="true" signature="1760:2835" ph="{...}" />
-            <marker date="1525951683506" expanded="true" signature="1781:2824" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="1813:2811" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="1855:1985" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="1895:1964" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="2001:2794" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="2041:2173" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="2192:2773" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="2244:2748" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="2297:2635" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="2457:2602" ph="&lt;button/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="7:386" ph="..." />
+            <marker date="1525959464844" expanded="true" signature="416:2963" ph="{...}" />
+            <marker date="1525959464844" expanded="true" signature="439:923" ph="{...}" />
+            <marker date="1525959464844" expanded="true" signature="476:769" ph="{&quot;fetchButtonText&quot;: 'Update Data'...}" />
+            <marker date="1525959464844" expanded="true" signature="665:763" ph="{&quot;fromSymbol&quot;: 'BTC'...}" />
+            <marker date="1525959464844" expanded="true" signature="948:1276" ph="{...}" />
+            <marker date="1525959464844" expanded="true" signature="1295:1782" ph="{...}" />
+            <marker date="1525959464844" expanded="true" signature="1317:1364" ph="{&quot;fetchButtonText&quot;: 'Updating'...}" />
+            <marker date="1525959464844" expanded="true" signature="1395:1441" ph="{...}" />
+            <marker date="1525959464844" expanded="true" signature="1511:1776" ph="{...}" />
+            <marker date="1525959464844" expanded="true" signature="1628:1762" ph="{&quot;fullCandlesData&quot;: fullCandlesData...}" />
+            <marker date="1525959464844" expanded="true" signature="1821:1869" ph="{...}" />
+            <marker date="1525959464844" expanded="true" signature="1882:2961" ph="{...}" />
+            <marker date="1525959464844" expanded="true" signature="1903:2950" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="1935:2937" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="1977:2107" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="2017:2086" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="2123:2920" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="2163:2295" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="2314:2899" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="2366:2874" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="2419:2761" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="2583:2728" ph="&lt;button/&gt;" />
           </folding>
         </state>
       </provider>
@@ -690,28 +686,29 @@
         <state relative-caret-position="300">
           <caret line="21" column="46" lean-forward="false" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
           <folding>
-            <marker date="1525951683506" expanded="true" signature="7:386" ph="..." />
-            <marker date="1525951683506" expanded="true" signature="416:2837" ph="{...}" />
-            <marker date="1525951683506" expanded="true" signature="439:893" ph="{...}" />
-            <marker date="1525951683506" expanded="true" signature="476:739" ph="{&quot;fetchButtonText&quot;: 'Update Data'...}" />
-            <marker date="1525951683506" expanded="true" signature="663:733" ph="{&quot;fromSymbol&quot;: 'BTC'...}" />
-            <marker date="1525951683506" expanded="true" signature="918:1246" ph="{...}" />
-            <marker date="1525951683506" expanded="true" signature="1265:1664" ph="{...}" />
-            <marker date="1525951683506" expanded="true" signature="1287:1334" ph="{&quot;fetchButtonText&quot;: 'Updating'...}" />
-            <marker date="1525951683506" expanded="true" signature="1393:1658" ph="{...}" />
-            <marker date="1525951683506" expanded="true" signature="1510:1644" ph="{&quot;fullCandlesData&quot;: fullCandlesData...}" />
-            <marker date="1525951683506" expanded="true" signature="1701:1747" ph="{...}" />
-            <marker date="1525951683506" expanded="true" signature="1760:2835" ph="{...}" />
-            <marker date="1525951683506" expanded="true" signature="1781:2824" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="1813:2811" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="1855:1985" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="1895:1964" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="2001:2794" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="2041:2173" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="2192:2773" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="2244:2748" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="2297:2635" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="2457:2602" ph="&lt;button/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="7:386" ph="..." />
+            <marker date="1525959464844" expanded="true" signature="416:2963" ph="{...}" />
+            <marker date="1525959464844" expanded="true" signature="439:923" ph="{...}" />
+            <marker date="1525959464844" expanded="true" signature="476:769" ph="{&quot;fetchButtonText&quot;: 'Update Data'...}" />
+            <marker date="1525959464844" expanded="true" signature="665:763" ph="{&quot;fromSymbol&quot;: 'BTC'...}" />
+            <marker date="1525959464844" expanded="true" signature="948:1276" ph="{...}" />
+            <marker date="1525959464844" expanded="true" signature="1295:1782" ph="{...}" />
+            <marker date="1525959464844" expanded="true" signature="1317:1364" ph="{&quot;fetchButtonText&quot;: 'Updating'...}" />
+            <marker date="1525959464844" expanded="true" signature="1395:1441" ph="{...}" />
+            <marker date="1525959464844" expanded="true" signature="1511:1776" ph="{...}" />
+            <marker date="1525959464844" expanded="true" signature="1628:1762" ph="{&quot;fullCandlesData&quot;: fullCandlesData...}" />
+            <marker date="1525959464844" expanded="true" signature="1821:1869" ph="{...}" />
+            <marker date="1525959464844" expanded="true" signature="1882:2961" ph="{...}" />
+            <marker date="1525959464844" expanded="true" signature="1903:2950" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="1935:2937" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="1977:2107" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="2017:2086" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="2123:2920" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="2163:2295" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="2314:2899" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="2366:2874" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="2419:2761" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="2583:2728" ph="&lt;button/&gt;" />
           </folding>
         </state>
       </provider>
@@ -3353,56 +3350,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/presentation/symbolSelection.component.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="52" lean-forward="false" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
+        <state relative-caret-position="585">
+          <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
           <folding>
-            <marker date="1525952109818" expanded="true" signature="96:1011" ph="{...}" />
-            <marker date="1525952109818" expanded="true" signature="121:359" ph="{...}" />
-            <marker date="1525952109818" expanded="true" signature="171:293" ph="{...}" />
-            <marker date="1525952109818" expanded="true" signature="385:506" ph="{...}" />
-            <marker date="1525952109818" expanded="true" signature="522:1009" ph="{...}" />
-            <marker date="1525952109818" expanded="true" signature="553:993" ph="&lt;form/&gt;" />
-            <marker date="1525952109818" expanded="true" signature="576:769" ph="&lt;label/&gt;" />
-            <marker date="1525952109818" expanded="true" signature="786:973" ph="&lt;label/&gt;" />
+            <marker date="1525959613571" expanded="true" signature="96:1285" ph="{...}" />
+            <marker date="1525959613571" expanded="true" signature="121:423" ph="{...}" />
+            <marker date="1525959613571" expanded="true" signature="171:357" ph="{...}" />
+            <marker date="1525959613571" expanded="true" signature="449:570" ph="{...}" />
+            <marker date="1525959613571" expanded="true" signature="586:1283" ph="{...}" />
+            <marker date="1525959613571" expanded="true" signature="617:1267" ph="&lt;form/&gt;" />
+            <marker date="1525959613571" expanded="true" signature="640:835" ph="&lt;label/&gt;" />
+            <marker date="1525959613571" expanded="true" signature="852:1041" ph="&lt;label/&gt;" />
+            <marker date="1525959613571" expanded="true" signature="1058:1247" ph="&lt;label/&gt;" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        <state relative-caret-position="300">
+          <caret line="20" column="17" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
           <folding>
-            <marker date="1525951683506" expanded="true" signature="7:386" ph="..." />
-            <marker date="1525951683506" expanded="true" signature="416:2837" ph="{...}" />
-            <marker date="1525951683506" expanded="true" signature="439:893" ph="{...}" />
-            <marker date="1525951683506" expanded="true" signature="476:739" ph="{&quot;fetchButtonText&quot;: 'Update Data'...}" />
-            <marker date="1525951683506" expanded="true" signature="663:733" ph="{&quot;fromSymbol&quot;: 'BTC'...}" />
-            <marker date="1525951683506" expanded="true" signature="918:1246" ph="{...}" />
-            <marker date="1525951683506" expanded="true" signature="1265:1664" ph="{...}" />
-            <marker date="1525951683506" expanded="true" signature="1287:1334" ph="{&quot;fetchButtonText&quot;: 'Updating'...}" />
-            <marker date="1525951683506" expanded="true" signature="1393:1658" ph="{...}" />
-            <marker date="1525951683506" expanded="true" signature="1510:1644" ph="{&quot;fullCandlesData&quot;: fullCandlesData...}" />
-            <marker date="1525951683506" expanded="true" signature="1701:1747" ph="{...}" />
-            <marker date="1525951683506" expanded="true" signature="1760:2835" ph="{...}" />
-            <marker date="1525951683506" expanded="true" signature="1781:2824" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="1813:2811" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="1855:1985" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="1895:1964" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="2001:2794" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="2041:2173" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="2192:2773" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="2244:2748" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="2297:2635" ph="&lt;div/&gt;" />
-            <marker date="1525951683506" expanded="true" signature="2457:2602" ph="&lt;button/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="7:386" ph="..." />
+            <marker date="1525959464844" expanded="true" signature="416:2963" ph="{...}" />
+            <marker date="1525959464844" expanded="true" signature="439:923" ph="{...}" />
+            <marker date="1525959464844" expanded="true" signature="476:769" ph="{&quot;fetchButtonText&quot;: 'Update Data'...}" />
+            <marker date="1525959464844" expanded="true" signature="665:763" ph="{&quot;fromSymbol&quot;: 'BTC'...}" />
+            <marker date="1525959464844" expanded="true" signature="948:1276" ph="{...}" />
+            <marker date="1525959464844" expanded="true" signature="1295:1782" ph="{...}" />
+            <marker date="1525959464844" expanded="true" signature="1317:1364" ph="{&quot;fetchButtonText&quot;: 'Updating'...}" />
+            <marker date="1525959464844" expanded="true" signature="1395:1441" ph="{...}" />
+            <marker date="1525959464844" expanded="true" signature="1511:1776" ph="{...}" />
+            <marker date="1525959464844" expanded="true" signature="1628:1762" ph="{&quot;fullCandlesData&quot;: fullCandlesData...}" />
+            <marker date="1525959464844" expanded="true" signature="1821:1869" ph="{...}" />
+            <marker date="1525959464844" expanded="true" signature="1882:2961" ph="{...}" />
+            <marker date="1525959464844" expanded="true" signature="1903:2950" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="1935:2937" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="1977:2107" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="2017:2086" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="2123:2920" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="2163:2295" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="2314:2899" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="2366:2874" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="2419:2761" ph="&lt;div/&gt;" />
+            <marker date="1525959464844" expanded="true" signature="2583:2728" ph="&lt;button/&gt;" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/communication/api.adapter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        <state relative-caret-position="225">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
           <folding />
         </state>
       </provider>

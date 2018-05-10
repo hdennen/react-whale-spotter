@@ -3,10 +3,12 @@ export default class ApiAdapter {
         this.cryptocompareApi = 'https://min-api.cryptocompare.com/data/histohour';
     }
 
-    fetchData(fetchOptions = {fromSymbol: 'BTC', toSymbol: 'USD', limit: 24}) {
+    fetchData(fetchOptions = {fromSymbol: 'BTC', toSymbol: 'USD', queryLimit: 24}) {
         // todo: url builder
 
-        return fetch(`${this.cryptocompareApi}?fsym=${fetchOptions.fromSymbol}&tsym=${fetchOptions.toSymbol}&limit=${fetchOptions.limit}`)
+        const endpoint = `${this.cryptocompareApi}?fsym=${fetchOptions.fromSymbol}&tsym=${fetchOptions.toSymbol}&limit=${fetchOptions.queryLimit}`;
+
+        return fetch(endpoint)
             .then((response) => {
                 return response.json();
             })

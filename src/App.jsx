@@ -15,9 +15,10 @@ class App extends Component {
         aggregateData: {data: 'No data'},
         fetchButtonText: 'Update Data',
         includeCurrentCandle: false,
-        symbolPair: {
+        queryOptions: {
             fromSymbol: 'BTC',
-            toSymbol: 'USD'
+            toSymbol: 'USD',
+            queryLimit: 24
         }
     };
 
@@ -40,7 +41,11 @@ class App extends Component {
           fetchButtonText: 'Updating'
       });
 
-      this.api.fetchData()
+      const fetchOptions = {
+          ...this.state.queryOptions
+      };
+
+      this.api.fetchData(fetchOptions)
           .then((myJson) => {
               const { fullCandlesData, aggregateData } = this.crunchData(myJson.Data);
               this.setState({
@@ -51,9 +56,9 @@ class App extends Component {
           });
   }
 
-    symbolInputHandler(symbolPair) {
+    symbolInputHandler(queryOptions) {
 
-        this.setState({symbolPair});
+        this.setState({queryOptions});
 
     }
 
@@ -73,7 +78,7 @@ class App extends Component {
                   <div className="six columns">
                       <div className="side-bar">
                           <div>
-                              <SymbolSelection symbolPair={this.state.symbolPair} inputHandler={this.symbolInputHandler} />
+                              <SymbolSelection queryOptions={this.state.queryOptions} inputHandler={this.symbolInputHandler} />
                               <button onClick={() => this.updateData()}>
                                   {this.state.fetchButtonText}
                               </button>
