@@ -13,6 +13,7 @@ class App extends Component {
     this.state = {
         fullCandlesData: [{data: 'No data'}],
         aggregateData: {data: 'No data'},
+        totals: {},
         fetchButtonText: 'Update Data',
         includeCurrentCandle: false,
         queryOptions: {
@@ -32,8 +33,9 @@ class App extends Component {
       const tradingData = this.volumeDeviance.augmentTradingData(jsonData);
       const aggregateData = this.volumeDeviance.calcPeriodData(tradingData.slice());
       const fullCandlesData = this.volumeDeviance.measureAgainstAggregates(tradingData.slice(), aggregateData);
+      const totals = this.volumeDeviance.calcTotals(tradingData.slice());
 
-      return { aggregateData, fullCandlesData };
+      return { aggregateData, fullCandlesData, totals };
   }
 
     updateData() {
@@ -47,10 +49,12 @@ class App extends Component {
 
       this.api.fetchData(fetchOptions)
           .then((myJson) => {
-              const { fullCandlesData, aggregateData } = this.crunchData(myJson.Data);
+              const { fullCandlesData, aggregateData, totals } = this.crunchData(myJson.Data);
+
               this.setState({
                   fullCandlesData,
                   aggregateData,
+                  totals,
                   fetchButtonText: 'Update Data'
               });
           });
@@ -68,6 +72,13 @@ class App extends Component {
           <div className="container">
               <div className="row">
                   <div className="twelve columns flex-center">
+                      <SymbolSelection queryOptions={this.state.queryOptions} inputHandler={this.symbolInputHandler} />
+
+                      <div>
+                          <button onClick={() => this.updateData()}>
+                              {this.state.fetchButtonText}
+                          </button>
+                      </div>
                   </div>
               </div>
 
@@ -77,13 +88,8 @@ class App extends Component {
                   </div>
                   <div className="six columns">
                       <div className="side-bar">
-                          <div>
-                              <SymbolSelection queryOptions={this.state.queryOptions} inputHandler={this.symbolInputHandler} />
-                              <button onClick={() => this.updateData()}>
-                                  {this.state.fetchButtonText}
-                              </button>
-                          </div>
                           <AggregateData aggregateData={this.state.aggregateData}/>
+                          <AggregateData aggregateData={this.state.totals}/>
                       </div>
                   </div>
               </div>

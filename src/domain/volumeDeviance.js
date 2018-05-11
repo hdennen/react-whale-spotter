@@ -1,4 +1,5 @@
 import { calcMedian, calcMean, round, calcPercentage} from '../utils/mathCalc.util';
+import * as candleCalc from './candleCalc';
 
 export class VolumeDeviance {
 
@@ -14,6 +15,38 @@ export class VolumeDeviance {
 
             return candle;
         });
+    }
+
+
+    calcTotals(tradingData) {
+        const accumulator = {
+            totalGreenAboveVMM: 0,
+            totalRedAboveVMM: 0,
+            totalGreenBetweenVMM: 0,
+            totalRedBetweenVMM: 0,
+            totalGreenAboveVMMBelowPMM: 0,
+            totalRedAboveVMMBelowPMM: 0
+        };
+
+        return tradingData.reduce((acc, candle) => {
+            const volumeAboveMeanAndMedian = candleCalc.isAboveDeltaVolumeMean(candle) && candleCalc.isAboveDeltaVolumeMedian(candle),
+                VolumeBetweenMeanAndMedian = candleCalc.isBetweenMM(candle),
+                priceBelowPriceDeltaMM = candleCalc.isBelowPriceDeltaMM(candle);
+
+            if (candleCalc.isGreenCandle(candle)) {
+                if (volumeAboveMeanAndMedian) acc.totalGreenAboveVMM++;
+                if (VolumeBetweenMeanAndMedian) acc.totalGreenBetweenVMM++;
+                if (volumeAboveMeanAndMedian && priceBelowPriceDeltaMM) acc.totalGreenAboveVMMBelowPMM++;
+            }
+
+            if (candleCalc.isRedCandle(candle)) {
+                if (volumeAboveMeanAndMedian) acc.totalRedAboveVMM++;
+                if (VolumeBetweenMeanAndMedian) acc.totalRedBetweenVMM++;
+                if (volumeAboveMeanAndMedian && priceBelowPriceDeltaMM) acc.totalRedAboveVMMBelowPMM++;
+            }
+
+            return acc;
+        }, accumulator);
     }
 
     measureAgainstAggregates(tradingData, aggregateData) {
