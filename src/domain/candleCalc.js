@@ -28,8 +28,8 @@ function isMedianAboveMean(aggregate) {
 }
 
 function isBetweenMM(candle) {
-    return isAboveDeltaVolumeMean(candle) && isBelowDeltaVolumeMedian(candle) ||
-            isAboveDeltaVolumeMedian(candle) && isBelowDeltaVolumeMean(candle);
+    return (isAboveDeltaVolumeMean(candle) && isBelowDeltaVolumeMedian(candle)) ||
+        (isAboveDeltaVolumeMedian(candle) && isBelowDeltaVolumeMean(candle));
 }
 
 function isBelowPriceMean(candle) {
