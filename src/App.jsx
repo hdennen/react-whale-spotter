@@ -29,15 +29,6 @@ class App extends Component {
     this.symbolInputHandler = this.symbolInputHandler.bind(this);
   }
 
-  crunchData(jsonData) {
-      const tradingData = this.volumeDeviance.augmentTradingData(jsonData);
-      const aggregateData = this.volumeDeviance.calcPeriodData(tradingData.slice());
-      const fullCandlesData = this.volumeDeviance.measureAgainstAggregates(tradingData.slice(), aggregateData);
-      const totals = this.volumeDeviance.calcTotals(tradingData.slice());
-
-      return { aggregateData, fullCandlesData, totals };
-  }
-
     updateData() {
       this.setState({
           fetchButtonText: 'Updating'
@@ -49,7 +40,7 @@ class App extends Component {
 
       this.api.fetchData(fetchOptions)
           .then((myJson) => {
-              const { fullCandlesData, aggregateData, totals } = this.crunchData(myJson.Data);
+              const { fullCandlesData, aggregateData, totals } = this.volumeDeviance.crunchData(myJson.Data);
 
               this.setState({
                   fullCandlesData,

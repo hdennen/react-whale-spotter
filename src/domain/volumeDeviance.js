@@ -3,6 +3,15 @@ import * as candleCalc from './candleCalc';
 
 export class VolumeDeviance {
 
+    crunchData(jsonData) {
+        const tradingData = this.augmentTradingData(jsonData);
+        const aggregateData = this.calcPeriodData(tradingData.slice());
+        const fullCandlesData = this.measureAgainstAggregates(tradingData.slice(), aggregateData);
+        const totals = this.calcTotals(tradingData.slice());
+
+        return { aggregateData, fullCandlesData, totals };
+    }
+
     augmentTradingData(candles) {
         let deltaPrice;
 
