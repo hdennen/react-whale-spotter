@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import TradingData from './presentation/tradingData.component.jsx';
-
 import AggregateData from './presentation/aggregateData.component.jsx';
+import Toggle from './presentation/toggle.component.jsx';
+
 import VolumeDeviance from './domain/volumeDeviance';
 import ApiAdapter from './communication/api.adapter';
 import SymbolSelection from "./presentation/symbolSelection.component.jsx";
@@ -26,10 +27,11 @@ class App extends Component {
     this.volumeDeviance = new VolumeDeviance();
     this.api = new ApiAdapter();
 
-    this.symbolInputHandler = this.symbolInputHandler.bind(this);
+    this.inputHandler = this.inputHandler.bind(this);
+    this.includeCurrentCandleHandler = this.includeCurrentCandleHandler.bind(this);
   }
 
-    updateData() {
+  updateData() {
       this.setState({
           fetchButtonText: 'Updating'
       });
@@ -53,41 +55,44 @@ class App extends Component {
           });
   }
 
-    symbolInputHandler(queryOptions) {
-
+    inputHandler(queryOptions) {
         this.setState({queryOptions});
-
     }
 
-  render() {
-    return (
-      <div className="App">
-          <div className="container">
-              <div className="row">
-                  <div className="twelve columns flex-center">
-                      <SymbolSelection queryOptions={this.state.queryOptions} inputHandler={this.symbolInputHandler} />
+    includeCurrentCandleHandler(value) {
+        this.setState(value);
+    }
 
-                      <div>
-                          <button onClick={() => this.updateData()}>
-                              {this.state.fetchButtonText}
-                          </button>
+
+    render() {
+      return (
+          <div className="App">
+              <div className="container">
+                  <div className="row">
+                      <div className="twelve columns flex-center">
+                          <SymbolSelection queryOptions={this.state.queryOptions} inputHandler={this.inputHandler} />
+                          <Toggle includeCurrentCandle={this.state.includeCurrentCandle} inputHandler={this.includeCurrentCandleHandler} />
+                          <div>
+                              <button onClick={() => this.updateData()}>
+                                  {this.state.fetchButtonText}
+                              </button>
+                          </div>
                       </div>
                   </div>
-              </div>
 
-              <div className="row">
-                  <div className="six columns">
-                      <TradingData tradingData={this.state.fullCandlesData}/>
-                  </div>
-                  <div className="six columns">
-                      <div className="side-bar">
-                          <AggregateData aggregateData={this.state.aggregateData}/>
-                          <AggregateData aggregateData={this.state.totals}/>
+                  <div className="row">
+                      <div className="six columns">
+                          <TradingData tradingData={this.state.fullCandlesData}/>
+                      </div>
+                      <div className="six columns">
+                          <div className="side-bar">
+                              <AggregateData aggregateData={this.state.aggregateData}/>
+                              <AggregateData aggregateData={this.state.totals}/>
+                          </div>
                       </div>
                   </div>
               </div>
           </div>
-      </div>
     );
   }
 }
