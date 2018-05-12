@@ -40,6 +40,8 @@ class App extends Component {
 
       this.api.fetchData(fetchOptions)
           .then((myJson) => {
+              if (!this.state.includeCurrentCandle) myJson.Data.pop();
+
               const { fullCandlesData, aggregateData, totals } = this.volumeDeviance.crunchData(myJson.Data);
 
               this.setState({
