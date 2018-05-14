@@ -68,8 +68,11 @@ export class VolumeDeviance {
            candle.deltaAggregateVolumeMean = round((candle.volumefrom - aggregateData.volumeMean), 5);
            candle.deltaAggregateVolumeMedian = round((candle.volumefrom - aggregateData.volumeMedian), 5);
 
-           candle.percentageDeltaPriceFromMedian = calcPercentage();
-           candle.percentageDeltaPriceFromMean = calcPercentage();
+           candle.percentageDeltaPriceFromMedian = calcPercentage(candle.deltaAggregatePriceMedian, aggregateData.deltaPriceMedian);
+           candle.percentageDeltaPriceFromMean = candle.deltaPriceAbs > aggregateData.deltaPriceMean ?
+               calcPercentage(candle.deltaAggregatePriceMean, aggregateData.deltaPriceMeanToUpperBound) :
+               calcPercentage(candle.deltaAggregatePriceMean, aggregateData.deltaPriceLowerBoundToMean);
+
            candle.percentageVolumeDeviationFromMedian = calcPercentage(candle.deltaAggregateVolumeMedian, aggregateData.deltaVolumeMedianToBounds);
            candle.percentageVolumeDeviationFromMean = candle.volumefrom > aggregateData.volumeMean ?
                calcPercentage(candle.deltaAggregateVolumeMean, aggregateData.deltaVolumeMeanToUpperBound) :
@@ -127,7 +130,7 @@ export class VolumeDeviance {
                 acc.deltaVolumeMedianMean = round((acc.volumeMedian - acc.volumeMean), 5);
 
                 acc.deltaPriceMeanToUpperBound = round(acc.deltaPriceUpperBound - acc.deltaPriceMean, 5);
-                acc.deltaPriceToLowerBoundToMean = round(acc.deltaPriceMean - acc.deltaPriceLowerBound, 5);
+                acc.deltaPriceLowerBoundToMean = round(acc.deltaPriceMean - acc.deltaPriceLowerBound, 5);
                 acc.deltaPriceToBounds = round(acc.deltaPriceUpperBound - acc.deltaPriceMedian, 5);
 
                 acc.deltaVolumeMeanToUpperBound = round(acc.volumeUpperBound - acc.volumeMean, 5);
