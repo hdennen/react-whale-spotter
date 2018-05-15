@@ -131,11 +131,11 @@ export class VolumeDeviance {
 
                 acc.deltaRangeMeanToUpperBound = round(acc.deltaRangeUpperBound - acc.deltaRangeMean, 5);
                 acc.deltaRangeLowerBoundToMean = round(acc.deltaRangeMean - acc.deltaRangeLowerBound, 5);
-                acc.deltaRangeToBounds = round(acc.deltaRangeUpperBound - acc.deltaRangeMedian, 5);
+                acc.deltaRangeMedianToBounds = round(acc.deltaRangeUpperBound - acc.deltaRangeMedian, 5);
 
                 acc.deltaPriceMeanToUpperBound = round(acc.deltaPriceUpperBound - acc.deltaPriceMean, 5);
                 acc.deltaPriceLowerBoundToMean = round(acc.deltaPriceMean - acc.deltaPriceLowerBound, 5);
-                acc.deltaPriceToBounds = round(acc.deltaPriceUpperBound - acc.deltaPriceMedian, 5);
+                acc.deltaPriceMedianToBounds = round(acc.deltaPriceUpperBound - acc.deltaPriceMedian, 5);
 
                 acc.deltaVolumeMeanToUpperBound = round(acc.volumeUpperBound - acc.volumeMean, 5);
                 acc.deltaVolumeLowerBoundToMean = round(acc.volumeMean - acc.volumeLowerBound, 5);
