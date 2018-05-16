@@ -13,7 +13,7 @@ export default class SymbolSelection extends Component {
     }
 
     handleChange(event) {
-        this.localState[event.target.id] = event.target.value;
+        this.localState[event.target.id] = event.target.value.toUpperCase();
 
         this.props.inputHandler(this.localState);
     }
