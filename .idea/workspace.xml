@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b85926d2-9760-4d7b-a974-818abe948a08" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/presentation/symbolSelection.component.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/symbolSelection.component.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/candleCalc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/candleCalc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/volumeDeviance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/volumeDeviance.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,11 +22,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="symbolSelection.component.jsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/presentation/symbolSelection.component.jsx">
+      <file leaf-file-name="volumeDeviance.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/domain/volumeDeviance.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="47" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
+            <state relative-caret-position="524">
+              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+              <folding>
+                <element signature="e#0#84#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -63,13 +66,13 @@
         <option value="$PROJECT_DIR$/src/presentation/symbolSelection.component.jsx.js" />
         <option value="$PROJECT_DIR$/src/communication/api.adapter.js" />
         <option value="$PROJECT_DIR$/src/utils/candleCalc.util.js" />
-        <option value="$PROJECT_DIR$/src/domain/candleCalc.js" />
         <option value="$PROJECT_DIR$/src/domain/candleCalc.test.js" />
         <option value="$PROJECT_DIR$/src/presentation/toggle.component.jsx" />
         <option value="$PROJECT_DIR$/src/App.jsx" />
-        <option value="$PROJECT_DIR$/src/domain/volumeDeviance.js" />
-        <option value="$PROJECT_DIR$/src/presentation/symbolSelection.component.jsx" />
         <option value="$PROJECT_DIR$/src/App.css" />
+        <option value="$PROJECT_DIR$/src/presentation/symbolSelection.component.jsx" />
+        <option value="$PROJECT_DIR$/src/domain/candleCalc.js" />
+        <option value="$PROJECT_DIR$/src/domain/volumeDeviance.js" />
       </list>
     </option>
   </component>
@@ -184,12 +187,12 @@
       <workItem from="1526022459011" duration="134000" />
       <workItem from="1526029253471" duration="28000" />
       <workItem from="1526029296258" duration="8648000" />
-      <workItem from="1526323134922" duration="3330000" />
+      <workItem from="1526323134922" duration="4272000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76443000" />
+    <option name="totallyTimeSpent" value="77385000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -474,13 +477,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/candleCalc.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="17" lean-forward="true" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/presentation/statelessComponents.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -533,16 +529,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/volumeDeviance.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#84#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -559,8 +545,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/presentation/symbolSelection.component.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="47" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
+        <state relative-caret-position="585">
+          <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/candleCalc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="50" column="28" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/volumeDeviance.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+          <folding>
+            <element signature="e#0#84#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

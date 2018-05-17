@@ -29,6 +29,7 @@ export class VolumeDeviance {
 
     calcTotals(tradingData) {
         const accumulator = {
+            totalAboveRMMBelowPMM: 0,
             totalGreenAboveVMM: 0,
             totalRedAboveVMM: 0,
             totalGreenBetweenVMM: 0,
@@ -52,6 +53,10 @@ export class VolumeDeviance {
                 if (volumeAboveMeanAndMedian) acc.totalRedAboveVMM++;
                 if (VolumeBetweenMeanAndMedian) acc.totalRedBetweenVMM++;
                 if (volumeAboveMeanAndMedian && priceBelowPriceDeltaMM) acc.totalRedAboveVMMBelowPMM++;
+            }
+
+            if (!candleCalc.isBelowRangeDeltaMM(candle) && priceBelowPriceDeltaMM) {
+                acc.totalAboveRMMBelowPMM++;
             }
 
             return acc;
