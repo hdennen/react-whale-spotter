@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b85926d2-9760-4d7b-a974-818abe948a08" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/candleCalc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/candleCalc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/volumeDeviance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/volumeDeviance.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,14 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="volumeDeviance.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/domain/volumeDeviance.js">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="524">
-              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
-              <folding>
-                <element signature="e#0#84#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -71,8 +68,8 @@
         <option value="$PROJECT_DIR$/src/App.jsx" />
         <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/presentation/symbolSelection.component.jsx" />
-        <option value="$PROJECT_DIR$/src/domain/candleCalc.js" />
         <option value="$PROJECT_DIR$/src/domain/volumeDeviance.js" />
+        <option value="$PROJECT_DIR$/src/domain/candleCalc.js" />
       </list>
     </option>
   </component>
@@ -108,23 +105,6 @@
             <path>
               <item name="react-whale-spotter" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-whale-spotter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-whale-spotter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-whale-spotter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-whale-spotter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-whale-spotter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-whale-spotter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-whale-spotter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="presentation" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -187,12 +167,12 @@
       <workItem from="1526022459011" duration="134000" />
       <workItem from="1526029253471" duration="28000" />
       <workItem from="1526029296258" duration="8648000" />
-      <workItem from="1526323134922" duration="4272000" />
+      <workItem from="1526323134922" duration="4769000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77385000" />
+    <option name="totallyTimeSpent" value="77882000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -205,7 +185,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21111111" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -470,13 +449,6 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.jsx">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/presentation/statelessComponents.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -552,8 +524,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/domain/candleCalc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="50" column="28" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="28" />
+        <state relative-caret-position="810">
+          <caret line="67" column="23" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -564,6 +536,13 @@
           <folding>
             <element signature="e#0#84#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
