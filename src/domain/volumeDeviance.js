@@ -134,6 +134,8 @@ export class VolumeDeviance {
                 acc.deltaVolume = round((acc.volumeUpperBound - acc.volumeLowerBound), 5);
                 acc.deltaVolumeMedianMean = round((acc.volumeMedian - acc.volumeMean), 5);
 
+                acc.percentageDVMMofDV = calcPercentage(acc.deltaVolumeMedianMean, acc.deltaVolume);
+
                 acc.deltaRangeMeanToUpperBound = round(acc.deltaRangeUpperBound - acc.deltaRangeMean, 5);
                 acc.deltaRangeLowerBoundToMean = round(acc.deltaRangeMean - acc.deltaRangeLowerBound, 5);
                 acc.deltaRangeMedianToBounds = round(acc.deltaRangeUpperBound - acc.deltaRangeMedian, 5);
