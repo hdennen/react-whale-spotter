@@ -52,6 +52,10 @@ function isBelowRangeDeltaMM(candle) {
     return isBelowRangeDeltaMean(candle) && isBelowRangeDeltaMedian(candle);
 }
 
+function isAboveRangeDeltaMM(candle) {
+    return !isBelowRangeDeltaMean(candle) && !isBelowRangeDeltaMedian(candle);
+}
+
 export {
     isGreenCandle,
     isRedCandle,
@@ -65,5 +69,6 @@ export {
     isBelowRangeDeltaMean,
     isBelowRangeDeltaMedian,
     isBelowPriceDeltaMM,
-    isBelowRangeDeltaMM
+    isBelowRangeDeltaMM,
+    isAboveRangeDeltaMM
 };

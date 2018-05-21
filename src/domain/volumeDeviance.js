@@ -56,7 +56,7 @@ export class VolumeDeviance {
                 if (volumeAboveMeanAndMedian && priceBelowPriceDeltaMM) acc.totalRedAboveVMMBelowPMM.push(index);
             }
 
-            if (!candleCalc.isBelowRangeDeltaMM(candle) && priceBelowPriceDeltaMM) {
+            if (candleCalc.isAboveRangeDeltaMM(candle) && priceBelowPriceDeltaMM) {
                 acc.totalAboveRMMBelowPMM.push(index);
             }
 
