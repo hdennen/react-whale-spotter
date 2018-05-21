@@ -23,6 +23,6 @@
 .side-bar {
 }
 
-/*.symbols {*/
-    /*text-transform: uppercase;*/
-/*}*/
+.inline {
+    display: inline;
+}

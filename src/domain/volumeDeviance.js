@@ -28,35 +28,36 @@ export class VolumeDeviance {
 
 
     calcTotals(tradingData) {
+        // shared array buffer for shits?
         const accumulator = {
-            totalAboveRMMBelowPMM: 0,
-            totalGreenAboveVMM: 0,
-            totalRedAboveVMM: 0,
-            totalGreenBetweenVMM: 0,
-            totalRedBetweenVMM: 0,
-            totalGreenAboveVMMBelowPMM: 0,
-            totalRedAboveVMMBelowPMM: 0
+            totalAboveRMMBelowPMM: [],
+            totalGreenAboveVMM: [],
+            totalRedAboveVMM: [],
+            totalGreenBetweenVMM: [],
+            totalRedBetweenVMM: [],
+            totalGreenAboveVMMBelowPMM: [],
+            totalRedAboveVMMBelowPMM: []
         };
 
-        return tradingData.reduce((acc, candle) => {
+        return tradingData.reduce((acc, candle, index) => {
             const volumeAboveMeanAndMedian = candleCalc.isAboveDeltaVolumeMean(candle) && candleCalc.isAboveDeltaVolumeMedian(candle),
                 VolumeBetweenMeanAndMedian = candleCalc.isBetweenMM(candle),
                 priceBelowPriceDeltaMM = candleCalc.isBelowPriceDeltaMM(candle);
 
             if (candleCalc.isGreenCandle(candle)) {
-                if (volumeAboveMeanAndMedian) acc.totalGreenAboveVMM++;
-                if (VolumeBetweenMeanAndMedian) acc.totalGreenBetweenVMM++;
-                if (volumeAboveMeanAndMedian && priceBelowPriceDeltaMM) acc.totalGreenAboveVMMBelowPMM++;
+                if (volumeAboveMeanAndMedian) acc.totalGreenAboveVMM.push(index);
+                if (VolumeBetweenMeanAndMedian) acc.totalGreenBetweenVMM.push(index);
+                if (volumeAboveMeanAndMedian && priceBelowPriceDeltaMM) acc.totalGreenAboveVMMBelowPMM.push(index);
             }
 
             if (candleCalc.isRedCandle(candle)) {
-                if (volumeAboveMeanAndMedian) acc.totalRedAboveVMM++;
-                if (VolumeBetweenMeanAndMedian) acc.totalRedBetweenVMM++;
-                if (volumeAboveMeanAndMedian && priceBelowPriceDeltaMM) acc.totalRedAboveVMMBelowPMM++;
+                if (volumeAboveMeanAndMedian) acc.totalRedAboveVMM.push(index);
+                if (VolumeBetweenMeanAndMedian) acc.totalRedBetweenVMM.push(index);
+                if (volumeAboveMeanAndMedian && priceBelowPriceDeltaMM) acc.totalRedAboveVMMBelowPMM.push(index);
             }
 
             if (!candleCalc.isBelowRangeDeltaMM(candle) && priceBelowPriceDeltaMM) {
-                acc.totalAboveRMMBelowPMM++;
+                acc.totalAboveRMMBelowPMM.push(index);
             }
 
             return acc;

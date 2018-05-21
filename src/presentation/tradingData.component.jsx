@@ -8,7 +8,7 @@ export default class TradingData extends Component {
         return (
             <div>
                 {this.props.tradingData.map((candleData, index) => {
-                    return <CandleData key={index} candleData={candleData}/>;
+                    return <CandleData id={index} key={index} candleData={candleData}/>;
                 })}
             </div>
         )

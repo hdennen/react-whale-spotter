@@ -7,6 +7,7 @@ import Toggle from './presentation/toggle.component.jsx';
 import VolumeDeviance from './domain/volumeDeviance';
 import ApiAdapter from './communication/api.adapter';
 import SymbolSelection from "./presentation/symbolSelection.component.jsx";
+import { AggregateTotals } from "./presentation/statelessComponents";
 
 class App extends Component {
   constructor(props) {
@@ -87,7 +88,7 @@ class App extends Component {
                       <div className="six columns">
                           <div className="side-bar">
                               <AggregateData aggregateData={this.state.aggregateData}/>
-                              <AggregateData aggregateData={this.state.totals}/>
+                              <AggregateTotals totals={this.state.totals}/>
                           </div>
                       </div>
                   </div>
