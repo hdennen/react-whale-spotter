@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 function PropertyValueDisplay(props) {
     let value = props.value;
@@ -28,23 +28,29 @@ function CandleData(props) {
 }
 
 function AggregateTotals(props) {
-    let value, link;
+    let value, link, rowClass;
     return (
         <div>
             {Object.keys(props.totals).map((key, index) => {
                 value = props.totals[key].length;
+                rowClass = index % 2 === 0 ? 'totals-item even' : 'totals-item odd';
 
                 if (value > 0) {
                     link = '#' + index.toString();
 
                     return (
-                        <div>
+                        <div className={rowClass}>
                             <PropertyValueDisplay key={index} property={key} value={value} />
                             <Links candleLinks={props.totals[key]} />
                         </div>
                     )
                 }
-                return <PropertyValueDisplay key={index} property={key} value={value}/>;
+
+                return (
+                    <div className={rowClass}>
+                        <PropertyValueDisplay key={index} property={key} value={value} />
+                    </div>
+                )
             })}
         </div>
     )
@@ -54,7 +60,7 @@ function Links(props) {
     let value, link, delimiter = ', ';
 
     return (
-        <div>
+        <div className="local-links">
             {Object.keys(props.candleLinks).map((key, index) => {
                 if (props.candleLinks.length === index + 1) delimiter = '';
                 value = props.candleLinks[key];
