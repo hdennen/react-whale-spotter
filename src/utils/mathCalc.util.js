@@ -11,7 +11,7 @@ function round(value, decimals) {
 }
 
 function calcPercentage(ratioAntecedent, ratioConsequent) {
-    return round(ratioAntecedent / ratioConsequent, 2) * 100;
+    return round(ratioAntecedent / ratioConsequent * 100, 2);
 }
 
 export {
